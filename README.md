@@ -1,5 +1,4 @@
 
-![bbb-install.sh](images/bbb-install.png?raw=true "bbb-install.sh")
 
 # bbb-install
 
