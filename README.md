@@ -40,11 +40,10 @@ When `bbb-install.sh` finishes, you'll see a message that gives you a test URL t
 
 When you open the URL, you should see a login to join the meeting `Demo Meeting`.
 
-![bbb-install.sh](images/html5-join.png?raw=true "HTML5 Page")
+
 
 Enter your name and click Join.  The BigBlueButton client should then load in your browser and prompt you to join the audio.  
 
-![bbb-install.sh](images/html5.png?raw=true "HTML5 Client")
 
 Click the '[x]' to skip joining the audio.  Why?  In this example BigBlueButton server is configured to use an IP address (HTTP not HTTPS) and, as such, the browser will block access to the webcam and microphone.  
 
@@ -98,15 +97,14 @@ If you are using EC2, you should also assign the server an [Elastic IP address](
 
 On Microsot Azure, when you create an instance you need to add the following inbound port rules to enable incoming connections on ports 80, 443, and UDP port range 16384-32768:
 
-![Azure Cloud ](images/azure-firewall.png?raw=true "Azure 80, 443, and UDP 16384-32768")
+
 
 On Google Compute Engine, when you create an instance you need to enable traffic on port 80 and 443.
 
-![Google Compute Engine 80-443](images/gce-80-443.png?raw=true "GCE 80 and 443")
 
 After the instance is created, you need to add a firewall rule to allow incoming UDP traffic on the port range 16384-32768.
 
-![Google Compute Engine Firewall](images/gce-firewall.png?raw=true "GCE Firewall")
+
 
 We make a disction here between the firewall installed with `-w` and the external firewall on a separate server.  Even with an external firewall, its good practice to still install the UFW firewall on the BigBlueButton server.
 
