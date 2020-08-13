@@ -6,7 +6,7 @@ Greenlight is a simple front-end for BigBlueButton written in Ruby on Rails. It 
 
 You can install Greenlight by adding the -g option.
 
-wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -v xenial-22 -s <replace with your domain> -e <replace with mail account> -w -g
+wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -v xenial-22 -s domain.com  -e mail@mail.com -w -g
 
 Once Greenlight is installed, it redirects the default home page to Greenlight. You can also configure GreenLight to use OAuth2 authentication.
 
