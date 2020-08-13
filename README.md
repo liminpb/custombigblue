@@ -1,5 +1,7 @@
-# Install Greenlight
+# Prerequisites
+Ubuntu 16.04 64-bit server
 
+# Install Greenlight
 Greenlight is a simple front-end for BigBlueButton written in Ruby on Rails. It lets users create accounts, have permanent rooms, and manage their recordings. It also lets you, as the administrator, manage the user accounts (such as approve or deny users).
 
 You can install Greenlight by adding the -g option.
@@ -38,97 +40,81 @@ So we hvae to make following changes in the files to rebrand the same.
 
 1. Welcome message. 
 
-==
-1. Login to the server SSH.
-2. Login to docker image as bash
-          docker exec -it <greenlightcontainer id> bash
-3. edit "./config/locales/en.yml". 
-4. Make following changes. 
+    * Login to the server SSH.
+    * Login to docker image as bash
+            docker exec -it <greenlightcontainer id> bash
+    * edit "./config/locales/en.yml". 
+    * Make following changes. 
+        Change line 
 
-5. Change line 
+            bigbluebutton: Bigbluebutton >> bigbluebutton: Your app name
 
-bigbluebutton: Bigbluebutton >> bigbluebutton: Your app name
+            greenlight: Greenlight   >> greenlight: Your Greenligh Name. 
 
-greenlight: Greenlight   >> greenlight: Your Greenligh Name. 
+            Under landing: section change everything with Bigbluebutton with your app name. 
 
-Under landing: section change everything with Bigbluebutton with your app name. 
+            You can replace every Bigbluebotton with your appname and Greenlight with Your appname. But make sure that you are not changing any variable. 
 
-You can replace every Bigbluebotton with your appname and Greenlight with Your appname. But make sure that you are not changing any variable. 
+            (bigbluebutton:   do not change the variable name before : )
 
-(bigbluebutton:   do not change the variable name before : )
+    * Stop start your docker container. 
 
-6. Stop start your docker container. 
-==
 
 
 2. Branding image.
 
-==
-Loigin to app as administrator. 
-Go to Orgonization from Top Right handside Admin button.
-Select site setting. 
-Update you branding image in the Apperence section. Click on Change image. 
-
-==
-
+    * Loigin to app as administrator. 
+    * Go to Orgonization from Top Right handside Admin button.
+    * Select site setting. 
+    * Update you branding image in the Apperence section. Click on Change image. 
 3. favicon.
 
-==
-1. Login to docker as bash.
-2. change favion in following directorty with your favicon 
-/usr/src/app/public/assets
-/usr/src/app/public.
-3. Stop start your docker container. 
-==
+    * Login to docker as bash.
+    * change favion in following directorty with your favicon 
+                /usr/src/app/public/assets
+                /usr/src/app/public.
+    * Stop start your docker container. 
+
 
 4. Help URL.
 
-==
-1. Login to docker as bash.
-2. edit ./app/views/shared/_header.html.erb  
-3. remove the help_url section in the file. 
-   
-   <% if Rails.configuration.help_url.present? %>                                                                                                                            <a class="dropdown-item" href="<%= Rails.configuration.help_url %>" target="_blank" rel="noopener">                                                                       <i class="dropdown-icon far fa-question-circle"></i> <%= t("header.dropdown.help") %>                                                                                 </a>                                                                                                                                                                  <% end %>  
-4. Stop start your docker container. 
-==
+    * Login to docker as bash.
+    * edit ./app/views/shared/_header.html.erb  
+    * remove the help_url section in the file. 
+    * Stop start your docker container. 
+
 
 5. PDF file in chat room. 
 
-==
-1. Login to ssh.
-2. cd /var/www/bigbluebutton-default
-3. Replace the default.pdf with your PDF.  
-4. Restart bb service "sudo bbb-conf --restart"
-==
+
+    * Login to ssh.
+        cd /var/www/bigbluebutton-default
+    * Replace the default.pdf with your PDF.  
+    * Restart bb service "sudo bbb-conf --restart"
+
 
 6. Metadata while sharing URL.
 
-===
-1. login to docker using bash.
-2. edit followiing ./config/locales/en.yml
+    * login to docker using bash.
+    * edit followiing ./config/locales/en.yml
 
- landing:                                                                                                                                                                  about: "%{href} is a simple front-end for your BigBlueButton open-source web conferencing server. You can create your own rooms to host sessions, or join others usi
+landing:                                                                            about: "%{href} is a simple front-end for your BigBlueButton open-source web conferencing server. You can create your own rooms to host sessions, or join others usi
  
- change %{href}  >>  YourAPP name. 
-
-3. Stop start your docker container. 
-===
+    * change %{href}  >>  YourAPP name. 
+    *Stop start your docker container. 
 
 7. Header and Footer. 
 
-==
-1. Login to docker as bash.
-2. Edit following files and replace Bigbluebotton with your app name. 
-./app/views/shared/_footer.html.erb
-./app/views/main/index.html.erb
-3. Stop start your docker container. 
-==
+    * Login to docker as bash.
+    * Edit following files and replace Bigbluebotton with your app name. 
+        ./app/views/shared/_footer.html.erb
+        ./app/views/main/index.html.erb
+    * Stop start your docker container. 
+
 
 8. Change Logo in chat room section.
 
-==
-1. Login to server SSH.
-2. cd  /var/bigbluebutton/playback/2.0/
-3. Change logo.png with your logo.
-4. Restart bb service "sudo bbb-conf --restart"
-==
+    * Login to server SSH.
+        cd  /var/bigbluebutton/playback/2.0/
+    * Change logo.png with your logo.
+    * Restart bb service "sudo bbb-conf --restart"
