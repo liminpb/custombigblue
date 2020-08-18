@@ -82,7 +82,9 @@ So we hvae to make following changes in the files to rebrand the same.
     * edit ./app/views/shared/_header.html.erb  
     * remove the help_url section in the file. 
     * Stop start your docker container. 
-
+    * back to server and edit "/usr/share/meteor/bundle/programs/server/assets/app/config/settings.yml"
+           edit helpLink: with your helplink 
+           edit copyright: with your copy right.
 
 5. PDF file in chat room. 
 
