@@ -120,3 +120,9 @@ landing:                                                                        
         cd  /var/bigbluebutton/playback/2.0/
     * Change logo.png with your logo.
     * Restart bb service "sudo bbb-conf --restart"
+    
+9. Change the defaultWelcomeMessage in chat room. 
+    * login to SSH.
+    * edit file /usr/share/bbb-web/WEB-INF/classes/bigbluebutton.properties
+    * replace "defaultWelcomeMessage=" with your welcome message.
+    * replace "defaultWelcomeMessageFooter=" with your message. 
